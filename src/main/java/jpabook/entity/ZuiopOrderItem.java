@@ -8,18 +8,18 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class OrderItem {
+public class ZuiopOrderItem {
 
     @Id @GeneratedValue
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Order order;
+    private ZuiopOrder zuiopOrder;
 
     @ManyToOne
     @JoinColumn(name = "item_id")
-    private Item item;
+    private ZuiopItem zuiopItem;
 
     private int orderPrice;
 

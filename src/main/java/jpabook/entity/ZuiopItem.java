@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Item {
+public class ZuiopItem {
 
     @Id @GeneratedValue
     private Long id;
@@ -24,6 +24,6 @@ public class Item {
 
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
-    private List<Category> categories = new ArrayList<>();
+    @ManyToMany(mappedBy = "zuiopItems")
+    private List<ZuiopCategory> categories = new ArrayList<>();
 }

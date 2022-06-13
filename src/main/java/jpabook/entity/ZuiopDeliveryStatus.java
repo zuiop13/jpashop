@@ -1,5 +1,5 @@
 package jpabook.entity;
 
-public enum DeliveryStatus {
+public enum ZuiopDeliveryStatus {
     OK,Cancel
 }

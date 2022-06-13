@@ -8,26 +8,26 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "ORDERS")
+@Entity
 @Getter
 @Setter
-public class Order {
+public class ZuiopOrder {
     @Id
     @GeneratedValue
     private Long id;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
-    private Member member;
+    private ZuiopMember zuiopMember;
 
     @OneToOne
     @JoinColumn(name = "delivery_id")
-    private Delivery delivery;
+    private ZuiopDelivery zuiopDelivery;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @OneToMany(mappedBy = "zuiopOrder")
+    private List<ZuiopOrderItem> zuiopOrderItems = new ArrayList<>();
 
     private LocalDateTime orderDate;
 
-    private OrderStatus status;
+    private ZuiopOrderStatus status;
 }

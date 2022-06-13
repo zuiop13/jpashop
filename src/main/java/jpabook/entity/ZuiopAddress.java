@@ -8,7 +8,7 @@ import javax.persistence.Embeddable;
 @Getter
 @Setter
 @Embeddable
-public class Address {
+public class ZuiopAddress {
     private String city;
     private String street;
     private String zipcode;

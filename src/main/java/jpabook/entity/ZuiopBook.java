@@ -1,6 +1,6 @@
 package jpabook.entity;
 
-public class Book extends Item {
+public class ZuiopBook extends ZuiopItem {
     private String author;
     private String isbn;
 }

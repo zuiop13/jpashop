@@ -1,5 +1,5 @@
 package jpabook.entity;
 
-public enum OrderStatus {
+public enum ZuiopOrderStatus {
     TRUE,FALSE
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Category {
+public class ZuiopCategory {
 
     @Id @GeneratedValue
     private Long id;
@@ -18,13 +18,13 @@ public class Category {
     private String name;
 
     @ManyToMany
-    @JoinTable(name = "CategoryItem")
-    private List<Item> items = new ArrayList<>();
+    @JoinTable(name = "ZuiopCategoryItem")
+    private List<ZuiopItem> zuiopItems = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn
-    private Category parent;
+    private ZuiopCategory parent;
 
     @OneToMany(mappedBy = "parent")
-    private List<Category> child = new ArrayList<>();
+    private List<ZuiopCategory> child = new ArrayList<>();
 }

@@ -1,6 +1,6 @@
 package jpabook.entity;
 
-public class Movie extends Item {
+public class ZuiopMovie extends ZuiopItem {
     private String director;
     private String actor;
 }

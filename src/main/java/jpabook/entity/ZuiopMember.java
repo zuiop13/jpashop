@@ -7,10 +7,10 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "MEMBER")
+@Entity
 @Getter
 @Setter
-public class Member {
+public class ZuiopMember {
 
     @Id @GeneratedValue
     private Long id;
@@ -18,8 +18,8 @@ public class Member {
     private String name;
 
     @Embedded
-    private Address address;
+    private ZuiopAddress ZAddress;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> Orders = new ArrayList<>();
+    @OneToMany(mappedBy = "zuiopMember")
+    private List<ZuiopOrder> zuiopOrders = new ArrayList<>();
 }
