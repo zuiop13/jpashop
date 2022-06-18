@@ -5,18 +5,21 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import static javax.persistence.FetchType.*;
+
 @Entity(name = "Delivery")
-@Getter
-@Setter
+@Getter @Setter
 public class Delivery {
     @Id @GeneratedValue
+    @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery", fetch = LAZY)
     private Order order;
 
     @Embedded
     private Address address;
 
-    private DeliveryStatus deliveryStatus;
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus status;  //ENUM [READY(준비), COMP(배송)]
 }
