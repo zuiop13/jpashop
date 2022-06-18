@@ -1,6 +1,6 @@
-package jpashop.entity.item;
+package jpashop.zuiop.entity.item;
 
-import jpashop.entity.Category;
+import jpashop.zuiop.entity.ZuiopCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,9 +10,10 @@ import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "dtype")
-@Getter @Setter
-public class Item {
+@DiscriminatorColumn(name="dtype")
+@Getter
+@Setter
+public class ZuiopItem {
 
     @Id @GeneratedValue
     @Column(name = "item_id")
@@ -22,6 +23,6 @@ public class Item {
     private int price;
     private int stockQuantity;
 
-    @ManyToMany(mappedBy = "items")
-    private List<Category> categories = new ArrayList<Category>();
+    @ManyToMany(mappedBy = "zuiopItems")
+    private List<ZuiopCategory> categories = new ArrayList<>();
 }

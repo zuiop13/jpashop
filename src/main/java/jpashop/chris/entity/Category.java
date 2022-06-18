@@ -1,6 +1,6 @@
-package jpashop.entity;
+package jpashop.chris.entity;
 
-import jpashop.entity.item.Item;
+import jpashop.chris.entity.item.Item;
 import lombok.Getter;
 import lombok.Setter;
 

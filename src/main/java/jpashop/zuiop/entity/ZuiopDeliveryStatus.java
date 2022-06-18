@@ -1,4 +1,4 @@
-package jpashop.zuiopEntity;
+package jpashop.zuiop.entity;
 
 public enum ZuiopDeliveryStatus {
     READY, COMP
