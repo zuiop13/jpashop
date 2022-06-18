@@ -13,6 +13,7 @@ import java.util.List;
 public class ZuiopMember {
 
     @Id @GeneratedValue
+    @Column(name = "member_id")
     private Long id;
 
     private String name;
