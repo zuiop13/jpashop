@@ -1,7 +1,5 @@
-package jpabook.entity;
+package jpashop.zuiopEntity;
 
-import jpashop.entity.Member;
-import jpashop.entity.OrderItem;
 import lombok.Getter;
 import lombok.Setter;
 

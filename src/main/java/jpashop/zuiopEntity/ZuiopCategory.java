@@ -1,6 +1,6 @@
-package jpabook.entity;
+package jpashop.zuiopEntity;
 
-import jpashop.entity.Category;
+import jpashop.zuiopEntity.item.ZuiopItem;
 import lombok.Getter;
 import lombok.Setter;
 

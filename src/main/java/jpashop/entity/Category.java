@@ -3,7 +3,6 @@ package jpashop.entity;
 import jpashop.entity.item.Item;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
 import java.util.ArrayList;

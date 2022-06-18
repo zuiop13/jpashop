@@ -1,4 +1,4 @@
-package jpabook.entity;
+package jpashop.zuiopEntity;
 
 import lombok.Getter;
 import lombok.Setter;
