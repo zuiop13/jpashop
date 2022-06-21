@@ -1,6 +1,7 @@
 package jpashop.zuiop.entity.item;
 
 import jpashop.zuiop.entity.ZuiopCategory;
+import jpashop.zuiop.exception.NotZuiopEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,4 +26,17 @@ public class ZuiopItem {
 
     @ManyToMany(mappedBy = "zuiopItems")
     private List<ZuiopCategory> categories = new ArrayList<>();
+
+
+    public void addStock(int stockQuantity) {
+        this.stockQuantity += stockQuantity;
+    }
+
+    public void removeStock(int stockQuantity) {
+        int restStock = this.stockQuantity - stockQuantity;
+        if(restStock < 0) {
+            throw new NotZuiopEnoughStockException("need more stock");
+        }
+        this.stockQuantity = restStock;
+    }
 }
