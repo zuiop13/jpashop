@@ -26,4 +26,24 @@ public class ZuiopOrderItem {
 
     private int orderPrice;
     private int count;
+
+    /* 생성 메서드 */
+    public static ZuiopOrderItem createOrderItem(ZuiopItem zuiopItem,int orderPrice,int count) {
+        ZuiopOrderItem zuiopOrderItem = new ZuiopOrderItem();
+        zuiopOrderItem.setZuiopItem(zuiopItem);
+        zuiopOrderItem.setOrderPrice(orderPrice);
+        zuiopOrderItem.setCount(count);
+        zuiopItem.removeStock(count);
+        return zuiopOrderItem;
+    }
+
+    /* 취소 하면, 아이템 수량 초기화 - 취소된 만큼 넣음 */
+    public void cancel() {
+        getZuiopItem().addStock(count);
+    }
+
+    /* 총 가격 */
+    public int getTotalPrice() {
+        return getOrderPrice() * getCount();
+    }
 }
