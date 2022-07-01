@@ -1,7 +1,9 @@
 package jpashop.zuiop.entity;
 
 import jpashop.chris.entity.Order;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,7 +14,9 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ZuiopOrder {
+
     @Id
     @GeneratedValue
     @Column(name = "order_id")
@@ -22,7 +26,7 @@ public class ZuiopOrder {
     @JoinColumn(name = "member_id")
     private ZuiopMember zuiopMember;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "delivery_id")
     private ZuiopDelivery zuiopDelivery;
 

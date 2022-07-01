@@ -1,7 +1,9 @@
 package jpashop.zuiop.entity;
 
 import jpashop.zuiop.entity.item.ZuiopItem;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,6 +12,7 @@ import javax.persistence.*;
 @Table(name = "zuiop_order_item")
 @Getter
 @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ZuiopOrderItem {
 
     @Id @GeneratedValue
